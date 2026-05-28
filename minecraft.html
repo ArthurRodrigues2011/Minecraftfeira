@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      touch-action:none;
+    }
+
+    body{
+      overflow:hidden;
+      background:black;
+      font-family:Arial, sans-serif;
+    }
+
+    iframe{
+      width:100vw;
+      height:100vh;
+      border:none;
+    }
+
+    .overlay{
+      position:fixed;
+      top:12px;
+      left:12px;
+      z-index:9999;
+      background:rgba(0,0,0,0.7);
+      color:white;
+      padding:10px 15px;
+      border-radius:12px;
+      font-size:14px;
+      backdrop-filter:blur(5px);
+    }
+
+    .back{
+      position:fixed;
+      top:12px;
+      right:12px;
+      z-index:9999;
+      background:#222;
+      color:white;
+      border:none;
+      padding:10px 18px;
+      border-radius:10px;
+      cursor:pointer;
+      font-size:14px;
+    }
+
+    .back:hover{
+      background:#444;
+    }
+
+    .mobile-tip{
+      position:fixed;
+      bottom:15px;
+      left:50%;
+      transform:translateX(-50%);
+      z-index:9999;
+      background:rgba(0,0,0,0.7);
+      color:white;
+      padding:10px 14px;
+      border-radius:12px;
+      font-size:13px;
+      text-align:center;
+      max-width:90%;
+      backdrop-filter:blur(5px);
+    }
+  </style>
+</head>
+<body>
+
+<div class="overlay">
+  Minecraft Web
+</div>
+
+<button class="back" onclick="window.location.href='index.html'">
+  Voltar
+</button>
+
+<div class="mobile-tip">
+  No celular: vire a tela e toque no jogo
+</div>
+
+<iframe
+  src="https://eaglercraft.com/mc/1.8.8/"
+  allowfullscreen>
+</iframe>
+
+</body>
+</html>
+footer{
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
