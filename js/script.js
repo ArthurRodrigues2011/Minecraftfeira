@@ -48,3 +48,8 @@ if ("serviceWorker" in navigator && ["http:", "https:"].includes(window.location
         });
     });
 }
+
+app.use((req, res, next) => {
+  res.setHeader("Content-Security-Policy", "");
+  next();
+});
