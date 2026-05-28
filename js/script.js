@@ -28,9 +28,7 @@ if (currentPage) {
             link.classList.remove("is-active");
             link.removeAttribute("aria-current");
 
-            if (link.dataset.page !== activePage) {
-                return;
-            }
+            if (link.dataset.page !== activePage) return;
 
             link.classList.add("is-active");
             link.setAttribute("aria-current", "page");
@@ -43,13 +41,16 @@ if (currentPage) {
 
 if ("serviceWorker" in navigator && ["http:", "https:"].includes(window.location.protocol)) {
     window.addEventListener("load", () => {
-        navigator.serviceWorker.register("./service-worker.js").catch(() => {
-            // O site continua funcionando normalmente se o navegador bloquear o PWA.
-        });
+        navigator.serviceWorker.register("./service-worker.js").catch(() => {});
     });
 }
 
-app.use((req, res, next) => {
-  res.setHeader("Content-Security-Policy", "");
-  next();
-});
+/* ✔️ FUNÇÕES DO MINECRAFT (CORRETO) */
+
+function abrirMinecraft() {
+    document.getElementById("minecraft-container").style.display = "block";
+}
+
+function fecharMinecraft() {
+    document.getElementById("minecraft-container").style.display = "none";
+}
