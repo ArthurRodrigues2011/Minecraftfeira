@@ -17,9 +17,11 @@
 
     <link rel="manifest" href="manifest.json">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 
@@ -27,6 +29,7 @@
 </head>
 
 <body data-page="home">
+
     <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
 
     <div class="bg-animation" aria-hidden="true">
@@ -36,18 +39,16 @@
         <div class="cube"></div>
         <div class="cube"></div>
     </div>
+
     <div class="bg-glow" aria-hidden="true"></div>
 
     <header>
         <nav aria-label="Navegação principal">
-            <a href="index.html" data-page="home">Início</a>
-            <a href="ia.html" data-page="ia">História da IA</a>
-            <a href="programacao.html" data-page="programacao">Programação</a>
-            <a href="matematica.html" data-page="matematica">Matemática</a>
-            <a href="ia.html#ia-programacao" data-page="ia-programacao">IA & Matemática</a>
-            <a href="carreira.html" data-page="carreira">Carreira</a>
-            <a href="mercado.html" data-page="mercado">Mercado & Salários</a>
-            <a href="curiosidades.html" data-page="curiosidades">Curiosidades</a>
+            <a href="index.html">Início</a>
+            <a href="ia.html">História da IA</a>
+            <a href="programacao.html">Programação</a>
+            <a href="matematica.html">Matemática</a>
+            <a href="carreira.html">Carreira</a>
         </nav>
     </header>
 
@@ -57,54 +58,80 @@
             <h1>MATEMÁTICA<br>IA & PROGRAMAÇÃO</h1>
             <h2>Feira de Ciências 2026</h2>
             <p>
-                Este projeto apresenta como a matemática, a programação e a inteligência artificial estão conectadas e presentes em praticamente toda tecnologia moderna utilizada atualmente.
+                Este projeto apresenta como a matemática, a programação e a inteligência artificial estão conectadas.
             </p>
             <a href="ia.html" class="hero-btn">EXPLORAR CORE</a>
         </section>
-
     </main>
-<section class="game-hub">
-    <h2>GAME HUB</h2>
-    <p>Área de demonstração interativa do projeto</p>
 
-    <a class="hub-btn" href="frontend/index.html">
-        Abrir Portal de Jogos
-    </a>
-</section>
+    <!-- GAME HUB -->
+    <section class="game-hub">
+        <h2>GAME HUB</h2>
+        <p>Área de demonstração interativa do projeto</p>
+
+        <a class="hub-btn" href="frontend/index.html">
+            Abrir Portal de Jogos
+        </a>
+    </section>
 
     <footer>
         <h2>Feira de Ciências 2026</h2>
-        <p>Projeto de Pesquisa Avançada sobre Matemática, Inteligência Artificial e Programação</p>
+        <p>Projeto de Pesquisa Avançada</p>
 
         <div class="integrantes-box">
-            <p class="footer-label">INTEGRANTES DO PROJETO</p>
+            <p class="footer-label">INTEGRANTES</p>
+
             <p class="footer-names">
-    Luis Daniel
-    &nbsp;|&nbsp;
+                Luis Daniel
+                &nbsp;|&nbsp;
 
-    <a href="doom.html"
-       aria-label="Abrir DOOM clássico"
-       style="color: inherit; text-decoration: none;">
-       Arthur Rodrigues
-    </a>
+                <a href="doom.html" style="color: inherit; text-decoration: none;">
+                    Arthur Rodrigues
+                </a>
 
-    &nbsp;|&nbsp;
+                &nbsp;|&nbsp;
 
-    <a href="minecraft/index.html">
-       aria-label="Abrir Minecraft Classic"
-       style="color: inherit; text-decoration: none;">
-       Conrado de Sá
-    </a>
+                <a href="#" onclick="abrirMinecraft(); return false;" style="color: inherit; text-decoration: none;">
+                    Conrado de Sá
+                </a>
 
-    &nbsp;|&nbsp;
+                &nbsp;|&nbsp;
 
-    Levi Marcos
-</p>
+                Levi Marcos
+            </p>
+
             <p class="footer-guide">
                 Orientação: Baltazar Lisboa
             </p>
         </div>
     </footer>
-</body>
 
+    <!-- MINECRAFT OVERLAY -->
+    <div id="minecraft-container"
+         style="display:none; position:fixed; inset:0; z-index:9999; background:black;">
+
+        <button onclick="fecharMinecraft()"
+                style="position:absolute; top:10px; right:10px; z-index:10000; padding:10px;">
+            Fechar
+        </button>
+
+        <iframe
+            src="frontend/minecraft/index.html"
+            style="width:100%; height:100%; border:none;">
+        </iframe>
+
+    </div>
+
+    <!-- JS DO MINECRAFT -->
+    <script>
+        function abrirMinecraft() {
+            document.getElementById("minecraft-container").style.display = "block";
+        }
+
+        function fecharMinecraft() {
+            document.getElementById("minecraft-container").style.display = "none";
+        }
+    </script>
+
+</body>
 </html>
